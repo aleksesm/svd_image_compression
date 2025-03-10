@@ -15,7 +15,7 @@ The program allows users to compress images using SVD while controlling the comp
 
 ## How It Works
 
-SVD decomposes an image matrix into three matrices: \(A = U \Sigma V^T\) By keeping only the first **k** singular values, we approximate the image while significantly reducing its size.
+SVD decomposes an image matrix into three matrices: A = U * S * V' By keeping only the first **k** singular values, we approximate the image while significantly reducing its size.
 
 ### **Compression Rate and k Selection**
 
