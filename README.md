@@ -29,7 +29,7 @@ SVD decomposes an image matrix into three matrices: A = U * S * V' By keeping on
 Make sure you have Python installed and install the required packages:
 
 ```sh
-pip install numpy matplotlib scikit-image pillow argparse
+pip install -r requirements.txt
 ```
 
 ## Usage
@@ -67,6 +67,8 @@ If `--visualize` is enabled, the program generates:
       - A combined plot to compare singular values across channels.
   - When compressing RGB to grayscale:
       - A plot for the singular values.
+   
+The sample image files with names ending in "_large" have significantly higher resolutions. While compressing them may take a bit longer, their larger size allows for much better compression results at the same compression rate. With a little patience, you’ll see impressive quality retention despite high compression.
 
 ## Project Structure
 
