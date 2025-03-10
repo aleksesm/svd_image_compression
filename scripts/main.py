@@ -9,7 +9,8 @@ from svd_compression.visualization import (
 
 
 def main():
-    img_path = "../sample_images/shapes_gray.jpg"
+    # Example Usage
+    img_path = "../sample_images/butterfly.jpg"
     target_compression_rate = 0.05
 
     # Compression Options
