@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 
 
 def plot_singular_values(singular_values, title, log_scale=True):
@@ -16,8 +15,6 @@ def plot_singular_values(singular_values, title, log_scale=True):
     plt.grid(True)
     plt.show()
 
-
-import matplotlib.pyplot as plt
 
 def plot_rgb_singular_values(singular_values_rgb, channels=['Red', 'Green', 'Blue'], log_scale=True):
     """
@@ -42,7 +39,6 @@ def plot_rgb_singular_values(singular_values_rgb, channels=['Red', 'Green', 'Blu
 
     plt.tight_layout()  # Adjust layout for better spacing
     plt.show()
-
 
 
 def plot_combined_singular_values(singular_values_rgb, channels=['Red', 'Green', 'Blue'], log_scale=True):
@@ -85,6 +81,3 @@ def display_image_comparison(original_image, compressed_image):
     ax[1].axis('off')
 
     plt.show()
-
-
-

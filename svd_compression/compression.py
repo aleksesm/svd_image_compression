@@ -1,7 +1,6 @@
 import numpy as np
 from skimage import io, color
 from scipy.linalg import svd
-from PIL import Image
 
 
 def compute_svd_compression(channel: np.ndarray, k: int) -> np.ndarray:

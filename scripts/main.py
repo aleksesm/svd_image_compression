@@ -1,5 +1,4 @@
 from skimage import io
-from PIL import Image
 from svd_compression.compression import svd_compression
 from svd_compression.visualization import (
     display_image_comparison,
