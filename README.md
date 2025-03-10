@@ -48,13 +48,13 @@ python svd_compression/cli.py <image_path> <compression_rate> [--grayscale] [--v
 #### **Compress an image to 10% of its original size and visualize the results:**
 
 ```sh
-python svd_compression/cli.py sample_images/nature.jpg 0.1 --visualize
+python svd_compression/cli.py sample_images/butterfly.jpg 0.1 --visualize
 ```
 
 #### **Compress an image to grayscale and save the output:**
 
 ```sh
-python svd_compression/cli.py sample_images/nature.jpg 0.1 --grayscale --output compressed_nature.jpg
+python svd_compression/cli.py sample_images/butterfly.jpg 0.1 --grayscale --output compressed_butterfly.jpg
 ```
 
 ## Visualization
