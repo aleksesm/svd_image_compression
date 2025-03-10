@@ -65,7 +65,7 @@ If `--visualize` is enabled, the program generates:
   - When compressing RGB to RGB:
       - Individual plots for **Red, Green, and Blue channels**.
       - A combined plot to compare singular values across channels.
-  - When compressing RGB to greyscale:
+  - When compressing RGB to grayscale:
       - A plot for the singular values.
 
 ## Project Structure
