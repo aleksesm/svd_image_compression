@@ -9,7 +9,7 @@ from svd_compression.visualization import (
 
 
 def main():
-    img_path = "../sample_images/nature-background-high-resolution-wallpaper-for-a-serene-and-stunning-view-free-photo.jpg"
+    img_path = "../sample_images/pexels-pixabay-60597.jpg"
     target_compression_rate = 0.1
 
     # Compression Options
