@@ -9,7 +9,6 @@ The program allows users to compress images using SVD while controlling the comp
 ## Features
 
 - **Compress images using SVD** with a specified compression rate.
-- **Supports both grayscale and RGB images.**
 - **Visualize singular value decay** for each color channel.
 - **Side-by-side comparison** of original and compressed images.
 - **Command-Line Interface (CLI) for easy execution.**
