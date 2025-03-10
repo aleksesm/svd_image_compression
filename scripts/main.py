@@ -1,4 +1,5 @@
 from skimage import io
+from PIL import Image
 from svd_compression.compression import svd_compression
 from svd_compression.visualization import (
     display_image_comparison,
@@ -9,8 +10,8 @@ from svd_compression.visualization import (
 
 
 def main():
-    img_path = "../sample_images/pexels-pixabay-60597.jpg"
-    target_compression_rate = 0.1
+    img_path = "../sample_images/shapes_gray.jpg"
+    target_compression_rate = 0.05
 
     # Compression Options
     compressed_rgb, singular_values_rgb = svd_compression(img_path, target_compression_rate, gray=False)

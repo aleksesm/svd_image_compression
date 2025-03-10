@@ -1,6 +1,7 @@
 import numpy as np
 from skimage import io, color
 from scipy.linalg import svd
+from PIL import Image
 
 
 def compute_svd_compression(channel: np.ndarray, k: int) -> np.ndarray:
@@ -26,16 +27,16 @@ def svd_compression(image_path: str, target_compression_rate: float, gray: bool 
     # Load image
     image = io.imread(image_path)
 
+    if image.ndim != 3 or image.shape[2] != 3:
+        raise ValueError("Input image must be an RGB image.")
+
     # Grayscale compression
     if gray:
-        rgb2gray = False
-        if image.ndim == 3:  # Convert RGB to grayscale
-            image = color.rgb2gray(image)  # Result will be a float32 image in range [0, 1]
-            rgb2gray = True
-        image = (image * 255).astype(np.uint8)  # Convert to uint8 (range [0, 255])
+        image = color.rgb2gray(image)  # Result will be a float32 image in range [0, 1]
+        image = (image*255).astype(np.uint8)  # convert to unit8 in  range {0, ... , 255}
 
         m, n = image.shape
-        k = calculate_optimal_k(m, n, target_compression_rate, rgb_to_gray=rgb2gray)
+        k = calculate_optimal_k(m, n, target_compression_rate, rgb_to_gray=gray)
 
         print(f"Retained singular values: {k}")
 
@@ -48,8 +49,6 @@ def svd_compression(image_path: str, target_compression_rate: float, gray: bool 
         return compressed_gray, singular_values
 
     # RGB compression
-    if image.ndim != 3 or image.shape[2] != 3:
-        raise ValueError("Input image must be an RGB image.")
 
     m, n, _ = image.shape
     k = calculate_optimal_k(m, n, target_compression_rate)

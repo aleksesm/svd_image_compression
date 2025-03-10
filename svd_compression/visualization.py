@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def plot_singular_values(singular_values, title, log_scale=True):
@@ -69,16 +70,21 @@ def display_image_comparison(original_image, compressed_image):
     Display side-by-side comparison of original and compressed images.
     """
     fig, ax = plt.subplots(1, 2, figsize=(18, 8))  # Increased image size
-    ax[0].imshow(original_image)
+
+    # If the images are grayscale (2D) or RGB (3D)
+    if compressed_image.ndim == 3:  # RGB to RGB
+        ax[0].imshow(original_image)
+        ax[1].imshow(compressed_image)
+    else:  # RGB to grayscale
+        ax[0].imshow(original_image, vmin=0, vmax=255)
+        ax[1].imshow(compressed_image, cmap="gray", vmin=0, vmax=255)
+
     ax[0].set_title("Original Image")
     ax[0].axis('off')
-
-    # detect if compressed image is rgb or grayscale and adjust plot accordingly
-    if compressed_image.ndim == 3:
-        ax[1].imshow(compressed_image)
-    else:
-        ax[1].imshow(compressed_image, cmap="gray")
     ax[1].set_title("Compressed Image")
     ax[1].axis('off')
 
     plt.show()
+
+
+
