@@ -63,17 +63,30 @@ If `--visualize` is enabled, the program generates:
 
 - A **side-by-side comparison** of the original and compressed images.
 - **Singular value decay plots**:
-  - Individual plots for **Red, Green, and Blue channels**.
-  - A combined plot to compare singular values across channels.
+  - When compressing RGB to RGB:
+      - Individual plots for **Red, Green, and Blue channels**.
+      - A combined plot to compare singular values across channels.
+  - When compressing RGB to greyscale:
+      - A plot for the singular values.
 
 ## Project Structure
 
 ```
-svd_compression/
-│── cli.py                # CLI interface
-│── compression.py        # Core compression logic
-│── visualization.py      # Visualization functions
-│── sample_images/        # Folder for test images
+svd_image_compression/ # Root directory of the project
+│
+├── svd_compression/ # Core module for the SVD compression logic
+│   ├── init.py # Initialize the package
+│   ├── cli.py # Command-line interface
+│   ├── compression.py # Core compression logic
+│   └── visualization.py # Visualization functions
+│
+├── scripts/ # Scripts folder for executable code
+│   └── main.py # Main script to execute SVD image compression and display results.
+│
+├── sample_images/ # Folder containing test images
+│
+├── requirements.txt # List of dependencies for the project
+└── README.md # Project documentation
 ```
 
 ## License
